@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600&family=Merriweather:wght@300&family=Montserrat:wght@300&family=Poppins:wght@400;500;600;700&display=swap');
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --topbar-color: #0168b3;
+    --searchbar-color: #004273;
+    --placeholder-color: #b8e1ff;
+    --buttons-background: #E0E8ED;
+
+
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+}
+
+.topbar {
+    height: 90px;
+    background: var(--topbar-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+img{
+    margin-left: 20px;
+    position: absolute;
+    margin-top: 20px;
+
+}
+
+.search-box {
+    background: var(--searchbar-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 5px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+
+.topbar .search-box .icon {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px; 
+    margin-left: 5px;
+}
+
+.search-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background: var(--searchbar-color);
+    color: white;
+}
+
+.search-box input::placeholder{
+    color: var(--placeholder-color);
+}
+
+.list {
+    position: absolute;
+    top: 60px;
+    width: 400px;
+    z-index: 9999;
+    opacity: 0.8;
+    background-color: white; 
+    border: none; 
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: inherit;
+    font-size: small;
+  }
+  
+  .list li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .list li:hover {
+    background-color: var(--topbar-color);
+    color:white; 
+
+}
+
+.map {
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 400px; /* Adjust the width as per your requirement */
+    height: 80%;
+    background-color: var(--topbar-color);
+    position: absolute;
+    top: 0;
+    left: -400px; 
+    transition: left 0.4s ease;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    opacity: 0.5;
+    color: white; 
+    display: flex;
+    align-items: center;
+}
+
+.sidebar div {
+    width: 300px;
+    font-family: inherit;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 12pt;
+}
+
+.sidebar div p {
+    color: white;
+    font-size: 11pt;
+}
+
+#vizContainer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: margin-left 0.2s ease; /* Smooth transition animation */
+}
+
+#vizContainer.shifted {
+    margin-left: 100px; /* Shifted to the right by the sidebar's width */
+}
+
+
+.buttons{ 
+    height: 80px;
+    background: var(--buttons-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.buttons button{
+    width: 20%;
+    padding: 10px 10px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+}
+
+.buttons #cultural {
+    color: #D96EDF;
+    border: 2px solid  #D96EDF;
+    background-color: white;
+}
+
+.buttons #natural {
+    color: #09CF6A;
+    border: 2px solid #09CF6A;
+    background-color: white;
+}
+
+.buttons #mix {
+    color: #FC601C;
+    border: 2px solid #FC601C;
+    background-color: white;
+}
+
+
+.buttons #cultural:hover {
+    color: white;
+    border: 2px solid  #D96EDF;
+    background-color: hsla(296, 64%, 67%, 0.9);
+    transition: var(--tran-04);
+}
+
+.buttons #natural:hover {
+    color: white;
+    border: 2px solid  #09CF6A;
+    background-color: hsla(146, 87%, 46%, 0.9);
+    transition: var(--tran-04);
+}
+
+.buttons #mix:hover {
+    color: white;
+    border: 2px solid   #FC601C;
+    background-color: hsla(19, 94%, 54%, 0.9);
+    transition: var(--tran-04);
+}
+
+
+.buttons #cultural.clicked {
+    background-color: #D96EDF;
+    color: white;
+  }
+
+  .buttons #natural.clicked {
+    background-color: #09CF6A;
+    color: white;
+  }
+
+  .buttons #mix.clicked {
+    background-color: #FC601C;
+    color: white;
+  }
+
